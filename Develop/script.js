@@ -6,50 +6,52 @@ $(function (event) {
 
   var today = dayjs();
   // var hour9save = localStorage.getItem("saveInput9");
-  var hour9 =$("#hour-9");
-  var hour10 = $("#hour-10");
-  var hour11 = $("#hour-11");
-  var hour12 = $("#hour-12");
-  var hour13 = $("#hour-13");
-  var hour14 = $("#hour-14");
-  var hour15 = $("#hour-15");
-  var hour16 = $("#hour-16");
-  var hour17 = $("#hour-17");
-  // var saveBtn = $(".saveBtn");
-  // var userInput = $('textarea[class=".description"]');
+  var hour9 =$("div#hour-9");
+  var hour10 = $("div#hour-10");
+  var hour11 = $("div#hour-11");
+  var hour12 = $("div#hour-12");
+  var hour13 = $("div#hour-13");
+  var hour14 = $("div#hour-14");
+  var hour15 = $("div#hour-15");
+  var hour16 = $("div#hour-16");
+  var hour17 = $("div#hour-17");
   var textBox =$(".description");
   var timeBlock = $(".time-block");
   var container = $(".container-lg")
   var hourArray = [hour9,hour10,hour11,hour12,hour13,hour14,hour15,hour16,hour17];
 
-  container.on("click", ".saveBtn", function(event){
-    if(event.target = container.find("#hour-9")){
+  container.on("click", $(".saveBtn").parent(hour9), function(event){
+    if(event.target = timeBlock.find("#hour-9")){
       localStorage.setItem("saveInput9",textBox.val());
-    }
-    else if(event.target = container.find("#hour-10")){
-      localStorage.setItem("saveInput10",textBox.val());
-    }
-    else if(event.target = container.find("#hour-11")){
-      localStorage.setItem("saveInput11",textBox.val());
-    }
-    else if(event.target = container.find("#hour-12")){
-      localStorage.setItem("saveInput12",textBox.val());
-    }
-    else if(event.target = container.find("#hour-13")){
-      localStorage.setItem("saveInput13",textBox.val());
-    }
-    else if(event.target = container.find("#hour-14")){
-      localStorage.setItem("saveInput14",textBox.val());
-    }
-    else if(event.target = container.find("#hour-15")){
-      localStorage.setItem("saveInput15",textBox.val());
-    }
-    else if(event.target = container.find("#hour-16")){
-      localStorage.setItem("saveInput16",textBox.val());
-    }
-    else if(event.target = container.find("#hour-17")){
-      localStorage.setItem("saveInput17",textBox.val());
     }});
+  container.on("click", $(".saveBtn").parent(hour10), function(event){
+    if(event.target = timeBlock.find("#hour-10")){
+      localStorage.setItem("saveInput10",textBox.val());
+    }});
+    // else if(event.target = container.find("#hour-10")){
+    //   localStorage.setItem("saveInput10",textBox.val());
+    // }
+    // else if(event.target = timeBlock.find("#hour-11")){
+    //   localStorage.setItem("saveInput11",textBox.val());
+    // }
+    // else if(event.target = timeBlock.find("#hour-12")){
+    //   localStorage.setItem("saveInput12",textBox.val());
+    // }
+    // else if(event.target = timeBlock.find("#hour-13")){
+    //   localStorage.setItem("saveInput13",textBox.val());
+    // }
+    // else if(event.target = timeBlock.find("#hour-14")){
+    //   localStorage.setItem("saveInput14",textBox.val());
+    // }
+    // else if(event.target = timeBlock.find("#hour-15")){
+    //   localStorage.setItem("saveInput15",textBox.val());
+    // }
+    // else if(event.target = timeBlock.find("#hour-16")){
+    //   localStorage.setItem("saveInput16",textBox.val());
+    // }
+    // else if(event.target = timeBlock.find("#hour-17")){
+    //   localStorage.setItem("saveInput17",textBox.val());
+    // }});
 
   // for (let i = 0; i < hourArray.length; i++) {
   //   localStorage.setItem("saveInput", textBox.val(hourArray[i]))
@@ -62,7 +64,32 @@ $(function (event) {
     // console.log(textBox.val());
     // localStorage.setItem("saveInput9",textBox.val());
     var hour9save = localStorage.getItem("saveInput9");
-    $(textBox).text(hour9save);
+    var hour10save = localStorage.getItem("saveInput10");
+    var hour11save = localStorage.getItem("saveInput11");
+    var hour12save = localStorage.getItem("saveInput12");
+    var hour13save = localStorage.getItem("saveInput13");
+    var hour14save = localStorage.getItem("saveInput14");
+    var hour15save = localStorage.getItem("saveInput15");
+    var hour16save = localStorage.getItem("saveInput16");
+    var hour17save = localStorage.getItem("saveInput17");
+    var saveArray = [hour9save,hour10save,hour11save,hour12save,hour13save,hour14save,hour15save,hour16save,hour17save];
+    $("div#hour-9").children(".description").text(hour9save);
+    $("div#hour-10").children(".description").text(hour10save);
+    $("div#hour-11").children(".description").text(hour11save);
+    $("div#hour-12").children(".description").text(hour12save);
+    $("div#hour-13").children(".description").text(hour13save);
+    $("div#hour-14").children(".description").text(hour14save);
+    $("div#hour-15").children(".description").text(hour15save);
+    $("div#hour-16").children(".description").text(hour16save);
+    $("div#hour-17").children(".description").text(hour17save);
+    // for (var j=0; j < hourArray.length; i++) {
+    // for (var i = 0; i < saveArray.length; i++) {
+    //   saveArray[i][j].children(".description").text(saveArray[i][j]);
+      
+    // }}
+    // if (textBox.children("#hour-9")) {
+    //   $(this).text(hour9save);
+    // }
   // $(function saveInput(event){
   //   var clicked = $(event.target);
   //   // clicked.localStorage.setItem("hour9set", textBox.text);
@@ -75,11 +102,6 @@ $(function (event) {
   // useful when saving the description in local storage?
   $("#currentDay").text(today.format("MMMM DD, YYYY"));
 
-   // Pseudo:
-// make multiple timeblocks
-// rename timeblocks accordingly with standard work hours
-
-
   //
   // TODO: Add code to apply the past, present, or future class to each time
   // block by comparing the id to the current hour. HINTS: How can the id
@@ -90,7 +112,6 @@ $(function (event) {
 
 
    // Pseudo:
-// declare current time for callback as a variable
 // create an array and place DOM nodes in the array / DOM node: grabs an element on the page.
 // Use loop to iterate through array to compare to current date/time using dayjs()
 // assign past, present, and future classes
