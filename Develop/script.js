@@ -5,7 +5,8 @@
 $(function (event) {
 
   var today = dayjs();
-  var hour9 = $("#hour-9");
+  // var hour9save = localStorage.getItem("saveInput9");
+  var hour9 =$("#hour-9");
   var hour10 = $("#hour-10");
   var hour11 = $("#hour-11");
   var hour12 = $("#hour-12");
@@ -17,13 +18,42 @@ $(function (event) {
   // var saveBtn = $(".saveBtn");
   // var userInput = $('textarea[class=".description"]');
   var textBox =$(".description");
-  var timeBlock = $(".time-block")
+  var timeBlock = $(".time-block");
+  var container = $(".container-lg")
   var hourArray = [hour9,hour10,hour11,hour12,hour13,hour14,hour15,hour16,hour17];
 
-  timeBlock.on("click", ".saveBtn", function(event){
-  for (let i = 0; i < hourArray.length; i++) {
-    localStorage.setItem("saveInput", textBox.val(hourArray[i]))
-  }
+  container.on("click", ".saveBtn", function(event){
+    if(event.target = container.find("#hour-9")){
+      localStorage.setItem("saveInput9",textBox.val());
+    }
+    else if(event.target = container.find("#hour-10")){
+      localStorage.setItem("saveInput10",textBox.val());
+    }
+    else if(event.target = container.find("#hour-11")){
+      localStorage.setItem("saveInput11",textBox.val());
+    }
+    else if(event.target = container.find("#hour-12")){
+      localStorage.setItem("saveInput12",textBox.val());
+    }
+    else if(event.target = container.find("#hour-13")){
+      localStorage.setItem("saveInput13",textBox.val());
+    }
+    else if(event.target = container.find("#hour-14")){
+      localStorage.setItem("saveInput14",textBox.val());
+    }
+    else if(event.target = container.find("#hour-15")){
+      localStorage.setItem("saveInput15",textBox.val());
+    }
+    else if(event.target = container.find("#hour-16")){
+      localStorage.setItem("saveInput16",textBox.val());
+    }
+    else if(event.target = container.find("#hour-17")){
+      localStorage.setItem("saveInput17",textBox.val());
+    }});
+
+  // for (let i = 0; i < hourArray.length; i++) {
+  //   localStorage.setItem("saveInput", textBox.val(hourArray[i]))
+  // }
     // var userInput = $('input[class=".description"]');
     // global event listener to make sure clicking on the save button
   // use event target, to traverse the DOM
@@ -31,7 +61,8 @@ $(function (event) {
   // 
     // console.log(textBox.val());
     // localStorage.setItem("saveInput9",textBox.val());
-  });
+    var hour9save = localStorage.getItem("saveInput9");
+    $(textBox).text(hour9save);
   // $(function saveInput(event){
   //   var clicked = $(event.target);
   //   // clicked.localStorage.setItem("hour9set", textBox.text);
