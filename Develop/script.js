@@ -2,7 +2,7 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 
-$(function () {
+$(function (event) {
 
   var today = dayjs();
   var hour9 = $("#hour-9");
@@ -14,6 +14,25 @@ $(function () {
   var hour15 = $("#hour-15");
   var hour16 = $("#hour-16");
   var hour17 = $("#hour-17");
+  // var saveBtn = $(".saveBtn");
+  // var userInput = $('textarea[class=".description"]');
+  var textBox =$(".description");
+  var timeBlock = $(".time-block")
+  var hourArray = [hour9,hour10,hour11,hour12,hour13,hour14,hour15,hour16,hour17];
+
+  timeBlock.on("click", ".saveBtn", function(event){
+    // var userInput = $('input[class=".description"]');
+    // global event listener to make sure clicking on the save button
+  // use event target, to traverse the DOM
+  // the save button is to save input into the timeblock into local storage
+  // 
+    console.log(textBox.val());
+    localStorage.setItem("saveInput",textBox.val());
+  });
+  // $(function saveInput(event){
+  //   var clicked = $(event.target);
+  //   // clicked.localStorage.setItem("hour9set", textBox.text);
+  // });
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
@@ -25,10 +44,6 @@ $(function () {
    // Pseudo:
 // make multiple timeblocks
 // rename timeblocks accordingly with standard work hours
-// global event listener to make sure clicking on the save button
-// use event target, to traverse the DOM
-// the save button is to save input into the timeblock into local storage
-// 
 
 
   //
