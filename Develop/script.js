@@ -21,13 +21,16 @@ $(function (event) {
   var hourArray = [hour9,hour10,hour11,hour12,hour13,hour14,hour15,hour16,hour17];
 
   timeBlock.on("click", ".saveBtn", function(event){
+  for (let i = 0; i < hourArray.length; i++) {
+    localStorage.setItem("saveInput", textBox.val(hourArray[i]))
+  }
     // var userInput = $('input[class=".description"]');
     // global event listener to make sure clicking on the save button
   // use event target, to traverse the DOM
   // the save button is to save input into the timeblock into local storage
   // 
-    console.log(textBox.val());
-    localStorage.setItem("saveInput",textBox.val());
+    // console.log(textBox.val());
+    // localStorage.setItem("saveInput9",textBox.val());
   });
   // $(function saveInput(event){
   //   var clicked = $(event.target);
