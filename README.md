@@ -28,17 +28,23 @@ $("#currentDay").text(today.format("MMMM DD, YYYY"));
 While a simple tool; DayJS provides very convenient access to extremely important date/time information vital for many website structures.
 
 ```
- if(today.hour() > 9){
-    hour9.addClass("past");
-  }
-  else if (today.hour() < 9){
-    hour9.addClass("future");
-  }
-  else{
-    hour9.addClass("present");
-  }
+    $(".time-block").each(function(){
+      var blockHour = $(this).attr("id").split("-");
+      console.log(blockHour);
+      if(today.hour() > blockHour[1]){
+        $(this).addClass("past");
+      }
+      else if(today.hour() < blockHour[1]){
+        $(this).addClass("future");
+      }
+      else{
+        $(this).addClass("present");
+      }
+    });
 ```
 These conditional statements I wrote gave me a chuckle, at first I over-complicated my thought process on how to go about sorting through each time block and give them the according class. At the end of the day i settled with this simple statement that just compares the current hourblock against a value representative of each text box.
+
+I then actually came back to this function and made it more dynamic. The conditional statements I initially wrote were a long string of statements, but this function helped remedy that! Now my page with dynamically check the time block number value against the current hourblock in the day.
 
 ## Expectation vs Reality
 
