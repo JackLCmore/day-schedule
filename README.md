@@ -12,7 +12,7 @@
 ## Deployed Site
 
 [Visit the Deployed Site!](https://jacklcmore.github.io/day-schedule/)
-![img](Assets/05-third-party-apis-homework-demo.gif)
+![img](assets/images/05-third-party-apis-homework-demo.gif)
 
 ## Purpose
 
